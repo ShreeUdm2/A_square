@@ -1,0 +1,286 @@
+import { useState, useEffect } from 'react';
+import { Calendar, Send } from 'lucide-react';
+import { supabase, Department, Doctor } from '../lib/supabase';
+
+export function AppointmentForm() {
+  const [departments, setDepartments] = useState<Department[]>([]);
+  const [doctors, setDoctors] = useState<Doctor[]>([]);
+  const [filteredDoctors, setFilteredDoctors] = useState<Doctor[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const [formData, setFormData] = useState({
+    patient_name: '',
+    patient_email: '',
+    patient_phone: '',
+    department_id: '',
+    doctor_id: '',
+    appointment_date: '',
+    appointment_time: '',
+    reason: '',
+  });
+
+  useEffect(() => {
+    fetchDepartments();
+    fetchDoctors();
+  }, []);
+
+  useEffect(() => {
+    if (formData.department_id) {
+      const filtered = doctors.filter(d => d.department_id === formData.department_id);
+      setFilteredDoctors(filtered);
+      if (!filtered.find(d => d.id === formData.doctor_id)) {
+        setFormData(prev => ({ ...prev, doctor_id: '' }));
+      }
+    } else {
+      setFilteredDoctors([]);
+    }
+  }, [formData.department_id, doctors]);
+
+  async function fetchDepartments() {
+    const { data } = await supabase
+      .from('departments')
+      .select('*')
+      .eq('is_active', true)
+      .order('display_order', { ascending: true });
+    setDepartments(data || []);
+  }
+
+  async function fetchDoctors() {
+    const { data } = await supabase
+      .from('doctors')
+      .select('*')
+      .eq('is_available', true)
+      .order('name', { ascending: true });
+    setDoctors(data || []);
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const { error } = await supabase.from('appointments').insert([
+        {
+          ...formData,
+          status: 'pending',
+        },
+      ]);
+
+      if (error) throw error;
+
+      setSuccess(true);
+      setFormData({
+        patient_name: '',
+        patient_email: '',
+        patient_phone: '',
+        department_id: '',
+        doctor_id: '',
+        appointment_date: '',
+        appointment_time: '',
+        reason: '',
+      });
+
+      setTimeout(() => setSuccess(false), 5000);
+    } catch (error) {
+      console.error('Error booking appointment:', error);
+      alert('Failed to book appointment. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const minDate = new Date().toISOString().split('T')[0];
+
+  return (
+    <section id="appointment" className="py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <span className="text-[#00B894] font-semibold text-sm uppercase tracking-wider">
+            Easy Booking
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4">
+            Book Your <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Appointment</span>
+          </h2>
+          <p className="text-xl text-gray-600">
+            Fill out the form below and we'll confirm your appointment shortly
+          </p>
+        </div>
+
+        {success && (
+          <div className="mb-8 bg-green-50 border-2 border-green-500 text-green-800 px-6 py-4 rounded-lg">
+            <strong>Success!</strong> Your appointment has been booked. We'll contact you soon for confirmation.
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 shadow-xl">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                name="patient_name"
+                value={formData.patient_name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                name="patient_email"
+                value={formData.patient_email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                name="patient_phone"
+                value={formData.patient_phone}
+                onChange={handleChange}
+                required
+                pattern="[0-9]{10}"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition"
+                placeholder="10-digit mobile number"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Department *
+              </label>
+              <select
+                name="department_id"
+                value={formData.department_id}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition"
+              >
+                <option value="">Select Department</option>
+                {departments.map(dept => (
+                  <option key={dept.id} value={dept.id}>
+                    {dept.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Doctor *
+              </label>
+              <select
+                name="doctor_id"
+                value={formData.doctor_id}
+                onChange={handleChange}
+                required
+                disabled={!formData.department_id}
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition disabled:bg-gray-100 disabled:cursor-not-allowed"
+              >
+                <option value="">Select Doctor</option>
+                {filteredDoctors.map(doc => (
+                  <option key={doc.id} value={doc.id}>
+                    {doc.name} - ₹{doc.consultation_fee}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Preferred Date *
+              </label>
+              <input
+                type="date"
+                name="appointment_date"
+                value={formData.appointment_date}
+                onChange={handleChange}
+                min={minDate}
+                required
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Preferred Time *
+              </label>
+              <select
+                name="appointment_time"
+                value={formData.appointment_time}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition"
+              >
+                <option value="">Select Time</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+              </select>
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Reason for Visit
+              </label>
+              <textarea
+                name="reason"
+                value={formData.reason}
+                onChange={handleChange}
+                rows={4}
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#0077B6] focus:ring-2 focus:ring-[#0077B6]/20 outline-none transition resize-none"
+                placeholder="Briefly describe your symptoms or reason for consultation"
+              />
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white px-8 py-4 rounded-lg hover:shadow-2xl transition transform hover:scale-105 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+            >
+              {loading ? (
+                'Booking...'
+              ) : (
+                <>
+                  <Calendar className="w-5 h-5" />
+                  Confirm Appointment
+                  <Send className="w-5 h-5" />
+                </>
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+}
