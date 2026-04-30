@@ -96,13 +96,18 @@ export function About() {
           </div>
         </div>
 
-        {/* Core Values */}
+        {/* Our Journey */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <span className="text-[#00B894] font-semibold text-sm uppercase tracking-wider">What We Stand For</span>
+            <span className="text-[#00B894] font-semibold text-sm uppercase tracking-wider">Our Journey</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-gray-800">
               Our Core <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Values</span>
             </h2>
+          </div>
+          <div className="bg-blue-50 rounded-2xl p-10 mb-12 flex flex-col gap-4">
+            <p className="text-gray-600 leading-relaxed">A Square Hospital, Jharsuguda was established in March 2025 with a vision to provide trusted, affordable, and advanced healthcare services to the people of Jharsuguda and nearby communities. Since its beginning, our mission has been to deliver compassionate treatment, modern medical care, and patient-focused services under one roof.</p>
+            <p className="text-gray-600 leading-relaxed">From the day it opened, A Square Hospital has continuously worked toward improving healthcare standards by bringing experienced doctors, advanced medical technology, and quality treatment facilities closer to the community. The hospital is committed to earning the trust of families through ethical practice, successful patient care, and dedication to excellence.</p>
+            <p className="text-gray-600 leading-relaxed">Today, A Square Hospital is growing as a center of healthcare excellence, serving every patient with care, dignity, and professionalism while continuing the journey toward a healthier tomorrow.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {coreValues.map((value) => (
