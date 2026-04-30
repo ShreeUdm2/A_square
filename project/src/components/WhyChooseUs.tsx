@@ -1,35 +1,35 @@
-import { Shield, Clock, Users, Award, Heart, Zap } from 'lucide-react';
+import { UserCheck, Building2, Baby, Wallet, Headphones as HeadphonesIcon, ShieldCheck } from 'lucide-react';
 
 const reasons = [
   {
-    icon: Shield,
-    title: 'Expert Medical Team',
-    description: 'Highly qualified doctors with years of experience in their respective specialities',
+    icon: UserCheck,
+    title: 'Experienced & Caring Doctors',
+    description: 'Skilled doctors delivering compassionate, personalized care to every patient.',
   },
   {
-    icon: Clock,
-    title: '24/7 Emergency Care',
-    description: 'Round-the-clock emergency services with immediate medical attention',
+    icon: Building2,
+    title: 'Modern Medical Facilities',
+    description: 'Equipped with advanced infrastructure to support safe, efficient treatments.',
   },
   {
-    icon: Users,
-    title: 'Patient-Centric Approach',
-    description: 'Personalized care with focus on patient comfort and satisfaction',
+    icon: Baby,
+    title: 'Advanced NICU & Child Care Services',
+    description: 'Specialized neonatal and pediatric care for your little ones\' well-being.',
   },
   {
-    icon: Award,
-    title: 'Advanced Technology',
-    description: 'State-of-the-art medical equipment and latest treatment methods',
+    icon: Wallet,
+    title: 'Affordable Healthcare Services',
+    description: 'Quality medical care designed to be accessible and budget-friendly for all.',
   },
   {
-    icon: Heart,
-    title: 'Compassionate Care',
-    description: 'Treating every patient with empathy, respect, and dignity',
+    icon: HeadphonesIcon,
+    title: '24/7 Patient Support',
+    description: 'Round-the-clock assistance ensuring patients receive timely help anytime.',
   },
   {
-    icon: Zap,
-    title: 'Quick Response',
-    description: 'Fast diagnosis and treatment with efficient medical processes',
+    icon: ShieldCheck,
+    title: 'Safe & Hygienic Environment',
+    description: 'Strictly maintained cleanliness and safety standards throughout the hospital.',
   },
 ];
 
