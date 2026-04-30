@@ -14,11 +14,11 @@ export function Header() {
             <div className="flex items-center gap-6">
               <a href="tel:+917312345678" className="flex items-center gap-2 hover:text-blue-100 transition">
                 <Phone className="w-4 h-4" />
-                <span className="hidden sm:inline">+91 731-2345-678</span>
+                <span className="hidden sm:inline">+91 9827973991</span>
               </a>
               <a href="mailto:info@asquarehospital.in" className="flex items-center gap-2 hover:text-blue-100 transition">
                 <Mail className="w-4 h-4" />
-                <span className="hidden md:inline">info@asquarehospital.in</span>
+                <span className="hidden md:inline">Asquarehospital@gmail.com</span>
               </a>
             </div>
             <div className="flex items-center gap-2">
