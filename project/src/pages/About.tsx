@@ -99,9 +99,8 @@ export function About() {
         {/* Our Journey */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <span className="text-[#00B894] font-semibold text-sm uppercase tracking-wider">Our Journey</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 text-gray-800">
-              Our Core <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Values</span>
+              Our <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Journey</span>
             </h2>
           </div>
           <div className="bg-blue-50 rounded-2xl p-10 mb-12 flex flex-col gap-4">
@@ -109,19 +108,7 @@ export function About() {
             <p className="text-gray-600 leading-relaxed">From the day it opened, A Square Hospital has continuously worked toward improving healthcare standards by bringing experienced doctors, advanced medical technology, and quality treatment facilities closer to the community. The hospital is committed to earning the trust of families through ethical practice, successful patient care, and dedication to excellence.</p>
             <p className="text-gray-600 leading-relaxed">Today, A Square Hospital is growing as a center of healthcare excellence, serving every patient with care, dignity, and professionalism while continuing the journey toward a healthier tomorrow.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreValues.map((value) => (
-              <div
-                key={value.title}
-                className="bg-white border border-gray-100 rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col gap-3"
-              >
-                <div className="text-3xl">{value.icon}</div>
-                <h3 className="text-lg font-bold text-gray-800">{value.title}</h3>
-                <div className="w-8 h-0.5 bg-gradient-to-r from-[#0077B6] to-[#00B894] rounded" />
-                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
+        
         </div>
 
         {/* Photo Strip */}
