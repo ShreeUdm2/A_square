@@ -76,7 +76,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#00B894] flex-shrink-0 mt-1" />
                 <span className="text-gray-400 text-sm">
-                  2121 AB Road, Rau, Indore, MP 453331
+                  Plot No. 1583/2952,Near Talpatia Chowk, Jharsuguda, Odisha-768204
                 </span>
               </li>
               <li className="flex items-start gap-3">
