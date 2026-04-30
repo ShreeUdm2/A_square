@@ -5,6 +5,7 @@ import { Departments } from '../components/Departments';
 import { Doctors } from '../components/Doctors';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { HealthPackages } from '../components/HealthPackages';
+import { SpecialOffers } from '../components/SpecialOffers';
 import { Services } from '../components/Services';
 import { AppointmentForm } from '../components/AppointmentForm';
 import { Testimonials } from '../components/Testimonials';
@@ -20,6 +21,7 @@ export function Home() {
       <Doctors limit={3} showViewAll={true} />
       <WhyChooseUs />
       <HealthPackages />
+      <SpecialOffers />
       <Services />
       <AppointmentForm />
       <Testimonials />
