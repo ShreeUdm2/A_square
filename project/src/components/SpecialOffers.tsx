@@ -76,13 +76,32 @@ export function SpecialOffers() {
           })}
         </div>
 
-        <div className="relative max-w-3xl mx-auto text-center bg-gradient-to-r from-[#0077B6] to-[#00B894] rounded-2xl p-10 shadow-lg overflow-hidden">
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
-          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
-          <p className="relative z-10 text-white text-lg md:text-xl font-medium leading-relaxed">
-            At <span className="font-bold">A Square Hospital, Jharsuguda</span>, we are dedicated to delivering trusted healthcare solutions for every stage of life.
-          </p>
+  <div className="mt-1 mb-18 flex justify-center px-4"> 
+        <div className="relative max-w-4xl w-full p-8 md:p-12 rounded-3xl bg-white border border-blue-50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden group transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,119,182,0.12)] hover:-translate-y-1"> 
+          {/* Background Glow Effect */} 
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 ease-in-out pointer-events-none">
+            <div className="absolute -top-20 -left-20 w-80 h-80 bg-[#0077B6]/15 rounded-full blur-3xl"></div> 
+            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-[#00B894]/15 rounded-full blur-3xl"></div>
+          </div> 
+          
+          <div className="relative z-10 text-center">
+            {/* Quote Icon */} 
+            <div className="text-6xl md:text-8xl font-serif text-[#0077B6]/20 leading-none h-10 md:h-16 mb-4 md:mb-2 select-none">
+              “
+            </div> 
+            
+            {/* Main Text */} 
+            <p className="text-xl md:text-3xl font-medium leading-relaxed text-gray-700">
+               A Square Hospital continue to grow with one promise —  
+               <br className="hidden md:block" />
+               <span className="font-bold bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent px-2"> "Compassionate Care for Every Life"</span>. 
+            </p>
+            
+            {/* Bottom Line */} 
+            <div className="mt-1 md:mt-3 h-1.5 w-24 bg-gradient-to-r from-[#0077B6] to-[#00B894] mx-auto rounded-full transition-all duration-500 group-hover:w-32"></div>
+          </div>
         </div>
+      </div>
 
       </div>
     </section>
