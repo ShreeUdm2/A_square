@@ -1,20 +1,57 @@
-import { departmentsData } from '../data/staticData';
-import { Heart, Bone, Brain, Baby, Smile, Stethoscope, Ear, Sparkles } from 'lucide-react';
+import { Heart, Baby, Stethoscope, Scissors, Bone, User, Activity, Leaf } from 'lucide-react';
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Heart,
-  Bone,
-  Brain,
-  Baby,
-  Smile,
-  Stethoscope,
-  Ear,
-  Sparkles,
-};
+const specialities = [
+  {
+    id: 1,
+    icon: Heart,
+    name: 'Gynecology & Obstetrics',
+    description: "Women's health, pregnancy care, normal delivery, painless delivery, high-risk pregnancy management, and infertility treatment.",
+  },
+  {
+    id: 2,
+    icon: Baby,
+    name: 'Maternity Care',
+    description: 'Safe motherhood services with modern labour room and postnatal care.',
+  },
+  {
+    id: 3,
+    icon: Stethoscope,
+    name: 'General Medicine',
+    description: 'Diagnosis and treatment for fever, infections, diabetes, hypertension, and other medical conditions.',
+  },
+  {
+    id: 4,
+    icon: Scissors,
+    name: 'General Surgery',
+    description: 'Minor and major surgical procedures with modern operation theatre facilities.',
+  },
+  {
+    id: 5,
+    icon: Bone,
+    name: 'Orthopedics',
+    description: 'Bone, joint, fracture, arthritis, and trauma care.',
+  },
+  {
+    id: 6,
+    icon: User,
+    name: 'Paediatrics',
+    description: 'Complete healthcare services for newborns, infants, children, and adolescents.',
+  },
+  {
+    id: 7,
+    icon: Activity,
+    name: 'Advanced NICU',
+    description: 'Specialized intensive care for premature and critically ill newborn babies.',
+  },
+  {
+    id: 8,
+    icon: Leaf,
+    name: 'Fertility Care',
+    description: 'Consultation and advanced solutions for infertility and reproductive health.',
+  },
+];
 
 export function Departments() {
-  const departments = departmentsData;
-
   return (
     <section id="departments" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,8 +68,8 @@ export function Departments() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {departments.map((dept) => {
-            const IconComponent = iconMap[dept.icon] || Stethoscope;
+          {specialities.map((dept) => {
+            const IconComponent = dept.icon;
             return (
               <div
                 key={dept.id}
