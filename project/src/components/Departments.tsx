@@ -1,5 +1,4 @@
-import { Heart, Baby, Stethoscope, Scissors, Bone, User, Activity, Leaf } from 'lucide-react';
-import gyno from '../assets/speciality/image.png'
+import gyno from '../assets/speciality/gyno.png'
 import maternity from '../assets/speciality/matenitycare.png'
 import general_medicine from '../assets/speciality/generalmedicine.png'
 import general_surgery from '../assets/speciality/surgery.png'
@@ -8,54 +7,52 @@ import paediatrics from '../assets/speciality/paediatrics.png'
 import nicu from '../assets/speciality/nicu.png'
 import fertility from '../assets/speciality/fertilyCare.png'
 
-
-
 const specialities = [
   {
     id: 1,
-    icon: Heart,
+    image: gyno,
     name: 'Gynecology & Obstetrics',
     description: "Women's health, pregnancy care, normal delivery, painless delivery, high-risk pregnancy management, and infertility treatment.",
   },
   {
     id: 2,
-    icon: Baby,
+    image: maternity,
     name: 'Maternity Care',
     description: 'Safe motherhood services with modern labour room and postnatal care.',
   },
   {
     id: 3,
-    icon: Stethoscope,
+    image: general_medicine,
     name: 'General Medicine',
     description: 'Diagnosis and treatment for fever, infections, diabetes, hypertension, and other medical conditions.',
   },
   {
     id: 4,
-    icon: Scissors,
+    image: general_surgery,
     name: 'General Surgery',
     description: 'Minor and major surgical procedures with modern operation theatre facilities.',
   },
   {
     id: 5,
-    icon: Bone,
+    image: orthopedics,
     name: 'Orthopedics',
     description: 'Bone, joint, fracture, arthritis, and trauma care.',
   },
   {
     id: 6,
-    icon: User,
+    image: paediatrics,
     name: 'Paediatrics',
     description: 'Complete healthcare services for newborns, infants, children, and adolescents.',
   },
   {
     id: 7,
-    icon: Activity,
+    image: nicu,
     name: 'Advanced NICU',
     description: 'Specialized intensive care for premature and critically ill newborn babies.',
   },
   {
     id: 8,
-    icon: Leaf,
+    image: fertility,
     name: 'Fertility Care',
     description: 'Consultation and advanced solutions for infertility and reproductive health.',
   },
@@ -79,27 +76,24 @@ export function Departments() {
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {specialities.map((dept) => {
-            const IconComponent = dept.icon;
             return (
               <div
                 key={dept.id}
-                className="group bg-gradient-to-br from-white to-blue-50 rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer border border-gray-100"
+                className="group bg-gradient-to-br from-white to-blue-50 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer border border-gray-100"
               >
-                <div className="relative h-40 bg-gradient-to-br from-[#0077B6] to-[#00B894] overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <IconComponent className="w-20 h-20 text-white/20 group-hover:scale-125 transition-transform duration-500" />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-8 h-8 text-[#0077B6]" />
-                    </div>
-                  </div>
+                <div className="relative h-40 overflow-hidden bg-gray-50 group-hover:bg-blue-50/50 transition-colors duration-500 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <img 
+                    src={dept.image} 
+                    alt={dept.name}
+                    className="w-full h-[80%] object-contain group-hover:scale-110 group-hover:-rotate-3 group-hover:-translate-y-1 transition-all duration-500 drop-shadow-sm group-hover:drop-shadow-lg relative z-10"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-800 mb-2 text-center group-hover:text-[#0077B6] transition">
-                    {dept.name}
+                  <h3 className="text-lg  font-bold text-gray-800 mb-2 text-center group-hover:text-[#0077B6] transition-colors duration-300">
+                   <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">{dept.name}</span>  
                   </h3>
-                  <p className="text-sm text-gray-600 text-center leading-relaxed">
+                  <p className="text-sm text-gray-600 text-center leading-relaxed ">
                     {dept.description}
                   </p>
                 </div>
