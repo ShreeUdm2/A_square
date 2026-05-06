@@ -79,10 +79,10 @@ export function Doctors({ limit, showViewAll }: DoctorsProps) {
               </div>
 
               <div className="p-6">
-                <div className="mb-3">
-                  <span className="inline-block bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white px-3 py-1 rounded-full text-xs font-medium">
+                <div className="mb-1">
+                  {/* <span className="inline-block bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white px-3 py-1 rounded-full text-xs font-medium">
                     {doctor.department?.name || 'General'}
-                  </span>
+                  </span> */}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-1">{doctor.name}</h3>
                 {doctor.designation && (
@@ -93,12 +93,12 @@ export function Doctors({ limit, showViewAll }: DoctorsProps) {
                   {Array.isArray(doctor.specialization) ? doctor.specialization.join(', ') : doctor.specialization}
                 </p>
 
-                <div className="border-t border-gray-100 pt-4 flex items-center justify-between gap-3">
+                <div className="border-t border-gray-100 pt-4 flex items-center justify-between gap-3 ">
                   <button
                     onClick={() => handleViewDetails(doctor)}
                     className="inline-flex items-center gap-1.5 text-[#0077B6] border border-[#0077B6] px-4 py-2.5 rounded-lg hover:bg-[#0077B6] hover:text-white transition-all duration-200 font-medium text-sm"
                   >
-                    <User className="w-4 h-4" />
+                    <User className="w-4 h-4 " />
                     View Details
                   </button>
                   <button
