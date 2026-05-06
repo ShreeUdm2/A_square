@@ -1,4 +1,14 @@
 import { Heart, Baby, Stethoscope, Scissors, Bone, User, Activity, Leaf } from 'lucide-react';
+import gyno from '../assets/speciality/image.png'
+import maternity from '../assets/speciality/matenitycare.png'
+import general_medicine from '../assets/speciality/generalmedicine.png'
+import general_surgery from '../assets/speciality/surgery.png'
+import orthopedics from '../assets/speciality/ortho.png'
+import paediatrics from '../assets/speciality/paediatrics.png'
+import nicu from '../assets/speciality/nicu.png'
+import fertility from '../assets/speciality/fertilyCare.png'
+
+
 
 const specialities = [
   {
@@ -59,11 +69,11 @@ export function Departments() {
           <span className="text-[#00B894] font-semibold text-sm uppercase tracking-wider">
             Our Specialities
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold mt-3 mb-4">
             Comprehensive <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Healthcare</span> Services
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            We offer a wide range of medical specialities with experienced doctors and modern equipment
+          <p className="text-base sm:text-md text-gray-600 max-w-3xl mx-auto">
+            We offer a wide range of medical specialities with experienced  <br />doctors and modern equipment
           </p>
         </div>
 

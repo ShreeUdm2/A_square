@@ -1,3 +1,7 @@
+import doc1Img from '../assets/image.png';
+import doc2Img from '../assets/dr-DA.png';
+import doc3Img from '../assets/dr_RA.png';
+
 export type Department = {
   id: string;
   name: string;
@@ -139,7 +143,7 @@ export const doctorsData: DoctorExtended[] = [
     is_available: true,
     display_order: 1,
     created_at: new Date().toISOString(),
-    image_url: '/src/assets/DR_B_Ramani.jpg',
+    image_url: doc1Img,
     designation: 'Founder & Director',
     bio: 'Senior Obstetrician & Gynecologist with 15+ years of experience.',
     bio_full: 'Dr. Babita Ramani is the Founder & Director of A Square Hospital, Jharsuguda, and a renowned Senior Obstetrician & Gynecologist with over 15 years of dedicated medical service. She holds an MD in Obstetrics & Gynecology, FICOG, and has completed an IVF Fellowship from KIEL, Germany. She served as Ex-Senior Resident at VIMSAR, Burla. Dr. Ramani is a skilled Laparoscopic Surgeon, Ultrasonologist, and Fertility Expert known for compassionate, personalized women\'s healthcare. Beyond her practice, she is an active social worker involved in community welfare and women\'s health awareness.'
@@ -156,7 +160,7 @@ export const doctorsData: DoctorExtended[] = [
     is_available: true,
     display_order: 2,
     created_at: new Date().toISOString(),
-    image_url: '/src/assets/DR_D_Arland.jpg',
+    image_url: doc2Img,
     designation: 'Consultant Gynecologist',
     bio: 'Specialist in Obstetrics & Gynecology with expertise in high-risk pregnancy care.',
     bio_full: 'Dr. Diptimayee Arland is a qualified Obstetrician and Gynecologist with an MBBS and MS in O&G. With 8 years of clinical experience, she specializes in managing high-risk pregnancies, providing comprehensive antenatal care, and ensuring safe deliveries for mothers and newborns. She is known for her patient-friendly approach and dedication to women\'s health at every stage of life. Dr. Arland is committed to delivering compassionate and evidence-based care to every patient she treats.'
@@ -173,7 +177,7 @@ export const doctorsData: DoctorExtended[] = [
     is_available: true,
     display_order: 3,
     created_at: new Date().toISOString(),
-    image_url: '/src/assets/DR_R_Arland.jpg',
+    image_url: doc3Img,
     designation: 'Consultant Surgeon',
     bio: 'General & Laparoscopic Surgeon with 10+ years of surgical expertise.',
     bio_full: 'Dr. Ranjit Arland is a skilled General and Laparoscopic Surgeon with an MBBS and MS in General Surgery, bringing over 10 years of surgical expertise to A Square Hospital. He specializes in both elective and emergency surgical procedures, including laparoscopic cholecystectomy, hernia repair, appendectomy, and trauma management. Known for his precision, calm approach, and thorough post-operative care, Dr. Arland is dedicated to ensuring the safety and swift recovery of every patient under his care.'

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Award, Calendar, X, Send, User, GraduationCap, Stethoscope, ChevronRight } from 'lucide-react';
 import { doctorsData, departmentsData, DoctorExtended, Department } from '../data/staticData';
+import ourTeam from '../assets/our-team.jpeg'
 
 interface DoctorsProps {
   limit?: number;
@@ -67,7 +68,7 @@ export function Doctors({ limit, showViewAll }: DoctorsProps) {
                 <img
                   src={doctor.image_url}
                   alt={doctor.name}
-                  className="w-full h-full object-contain object-top opacity-90 group-hover:scale-105 transition duration-500"
+                  className="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-white rounded-lg px-3 py-1.5 shadow-lg">
                   <div className="flex items-center gap-1.5">
@@ -296,6 +297,66 @@ export function Doctors({ limit, showViewAll }: DoctorsProps) {
           </div>
         </div>
       )}
+      {/* OUR TEAM SECTION */}
+      <div className="mt-16 bg-white border border-gray-100 rounded-2xl overflow-hidden grid md:grid-cols-2 min-h-[340px] shadow-sm">
+
+        {/* LEFT: Image with right-edge fade */}
+        <div className="relative overflow-hidden">
+          <img
+            src={ourTeam}
+            alt="Our Team"
+            className="w-full h-full object-cover"
+          />
+          {/* Seamless right-edge blend into white */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white" />
+        </div>
+
+        {/* RIGHT: Content */}
+        <div className="flex flex-col justify-center gap-4 px-8 py-10">
+
+          {/* Tag pill */}
+          <div className="flex items-center gap-2 w-fit bg-[#E1F5EE] rounded-full px-3 py-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#0F6E56]" />
+            <span className="text-[11px] font-semibold text-[#0F6E56] uppercase tracking-wider">Meet The Team</span>
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-2xl font-semibold text-gray-900 m-0 leading-snug">Our Team</h2>
+
+          {/* Accent line */}
+          <div className="w-10 h-0.5 bg-[#0077B6] rounded-full" />
+
+          {/* Paragraphs */}
+          <p className="text-sm text-gray-500 leading-relaxed m-0">
+            Our team of expert doctors and healthcare professionals is committed to delivering
+            reliable, compassionate, and high-quality medical care with a patient-first approach.
+          </p>
+          <p className="text-sm text-gray-500 leading-relaxed m-0">
+            With modern facilities and years of experience, we ensure safe treatment and
+            personalized attention for every patient.
+          </p>
+
+          {/* Feature cards grid */}
+          <div className="grid grid-cols-2 gap-3 mt-1">
+            {[
+              { label: "Expert Doctors", bg: "bg-[#E1F5EE]", icon: "👨‍⚕️" },
+              { label: "24/7 Support", bg: "bg-[#E6F1FB]", icon: "🕐" },
+              { label: "Modern Care", bg: "bg-[#EEEDFE]", icon: "🏥" },
+              { label: "Trusted Team", bg: "bg-[#EAF3DE]", icon: "⭐" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2.5">
+                <div className={`w-7 h-7 rounded-full ${item.bg} flex items-center justify-center text-sm flex-shrink-0`}>
+                  {item.icon}
+                </div>
+                <span className="text-sm font-medium text-gray-800">{item.label}</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
     </section>
+
+
   );
 }
