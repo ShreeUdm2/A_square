@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 
 const packages = [
@@ -144,6 +145,16 @@ export function HealthPackages() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View More Button */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/health-packages"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white px-8 py-3 rounded-full hover:shadow-lg transition transform hover:scale-105 font-medium text-lg"
+          >
+            View More Packages
+          </Link>
         </div>
 
       </div>
