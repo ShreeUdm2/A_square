@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, Check, Users, CircleAlert as AlertCircle, FlaskConical } from 'lucide-react';
+import { ChevronDown, ChevronUp, Check, Users, Info as AlertCircle, FlaskConical } from 'lucide-react';
 
 type Package = {
   id: number;
