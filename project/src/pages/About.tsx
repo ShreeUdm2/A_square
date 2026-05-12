@@ -9,9 +9,16 @@ import mainEntry from '../assets/imageGallery/mainEntry.png'
 import room from '../assets/imageGallery/executiveroom.png'
 import newMOT from '../assets/imageGallery/newMOT.png'
 import newVIPRoom from '../assets/imageGallery/newVIPRoom.png'
-import nicu from '../assets/imageGallery/nicu.png'
+import nicuu from '../assets/imageGallery/nicuuu.jpg'
 import sideView from '../assets/imageGallery/sideView.png'
 import area from '../assets/imageGallery/receprionArea.png'
+import healthcamp from '../assets/imageGallery/healthCamp.jpg'
+import nurseDR from '../assets/imageGallery/nurseDR.png'
+import oldage from '../assets/imageGallery/oldage.jpg'
+import patientGreetings from '../assets/imageGallery/patientGreetings.jpg'
+import twinbaby from '../assets/imageGallery/twinbaby.jpg'
+
+
 
 
 
@@ -25,7 +32,7 @@ const coreValues = [
 ];
 
 const galleryImages = [
-  frontView, reception, mainEntry, room, newMOT, newVIPRoom, nicu, sideView, area
+  frontView, reception, mainEntry, room, newMOT, newVIPRoom, nicuu, sideView, area, healthcamp, nurseDR, oldage, patientGreetings, twinbaby
 ];
 
 
@@ -140,7 +147,7 @@ export function About() {
                 <img
                   src={img}
                   alt={`Hospital facility ${index + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-fill transform transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-[#0077B6]/10 transition-colors duration-500 pointer-events-none" />
               </div>

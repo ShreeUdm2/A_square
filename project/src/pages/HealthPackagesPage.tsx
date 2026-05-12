@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import { X, Check, Users, Info, FlaskConical, ChevronRight } from 'lucide-react';
 
+const loadRazorpayScript = () => {
+  return new Promise((resolve) => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
+
 type Test = {
   no: number;
   description: string;
@@ -453,7 +463,7 @@ const categoryColors: Record<string, string> = {
   'Cardiac Care': 'bg-red-100 text-red-700',
 };
 
-function PackageModal({ pkg, onClose }: { pkg: Package; onClose: () => void }) {
+function PackageModal({ pkg, onClose, onBook }: { pkg: Package; onClose: () => void; onBook: (pkg: Package) => void }) {
   return (
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
@@ -572,19 +582,19 @@ function PackageModal({ pkg, onClose }: { pkg: Package; onClose: () => void }) {
 
         {/* Footer CTA */}
         <div className="p-4 border-t border-gray-100 flex-shrink-0">
-          <a
-            href="/#appointment"
+          <button
+            onClick={() => { onClose(); onBook(pkg); }}
             className="block w-full text-center py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white hover:shadow-lg transition transform hover:scale-[1.02]"
           >
             Book This Package
-          </a>
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-function PackageCard({ pkg, onOpen }: { pkg: Package; onOpen: () => void }) {
+function PackageCard({ pkg, onOpen, onBook }: { pkg: Package; onOpen: () => void; onBook: (pkg: Package) => void }) {
   return (
     <div
       className={`relative bg-white rounded-2xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full ${
@@ -641,8 +651,8 @@ function PackageCard({ pkg, onOpen }: { pkg: Package; onOpen: () => void }) {
           >
             View Full Details <ChevronRight className="w-4 h-4" />
           </button>
-          <a
-            href="/#appointment"
+          <button
+            onClick={() => onBook(pkg)}
             className={`block w-full text-center py-2.5 rounded-xl font-semibold text-sm transition ${
               pkg.popular
                 ? 'bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white hover:shadow-lg'
@@ -650,7 +660,7 @@ function PackageCard({ pkg, onOpen }: { pkg: Package; onOpen: () => void }) {
             }`}
           >
             Book Now
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -660,6 +670,59 @@ function PackageCard({ pkg, onOpen }: { pkg: Package; onOpen: () => void }) {
 export function HealthPackagesPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedPkg, setSelectedPkg] = useState<Package | null>(null);
+
+  const handlePayment = async (pkg: Package) => {
+    const res = await loadRazorpayScript();
+    
+    if (!res) {
+      alert('Razorpay SDK failed to load. Are you online?');
+      return;
+    }
+
+    // Convert price string (e.g., "₹2,600") to number (2600)
+    const priceNumber = parseInt(pkg.price.replace(/[^\d]/g, ''), 10);
+
+    const options = {
+      key: 'rzp_test_pQLbxWbQ5iwwZe',
+      amount: priceNumber * 100, // amount in paisa
+      currency: "INR",
+      name: "A Square Hospital",
+      description: pkg.name,
+      handler: function (response: any) {
+        // Success callback
+        const paymentId = response.razorpay_payment_id;
+        alert(`Payment successful! Payment ID: ${paymentId}`);
+        
+        // Construct WhatsApp message
+        const hospitalPhone = "+917987797922"; // Hospital's WhatsApp number
+        const message = `Hello A Square Hospital,
+
+I have successfully booked a Health Package.c:\Users\FTT\Downloads\nurseDR.png
+
+*Package Details:*
+- Name: ${pkg.name}
+- Amount Paid: ${pkg.price}
+- Payment ID: ${paymentId}
+
+Please guide me on the next steps.`;
+
+        // Redirect to WhatsApp
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/${hospitalPhone}?text=${encodedMessage}`, '_blank');
+      },
+      prefill: {
+        name: "", // You can prompt user for this before payment
+        email: "",
+        contact: ""
+      },
+      theme: {
+        color: "#00B894"
+      }
+    };
+
+    const paymentObject = new (window as any).Razorpay(options);
+    paymentObject.open();
+  };
 
   const filtered = activeCategory === 'All'
     ? packages
@@ -705,7 +768,7 @@ export function HealthPackagesPage() {
         {/* Package Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map(pkg => (
-            <PackageCard key={pkg.id} pkg={pkg} onOpen={() => setSelectedPkg(pkg)} />
+            <PackageCard key={pkg.id} pkg={pkg} onOpen={() => setSelectedPkg(pkg)} onBook={handlePayment} />
           ))}
         </div>
 
@@ -724,7 +787,7 @@ export function HealthPackagesPage() {
 
       {/* Modal */}
       {selectedPkg && (
-        <PackageModal pkg={selectedPkg} onClose={() => setSelectedPkg(null)} />
+        <PackageModal pkg={selectedPkg} onClose={() => setSelectedPkg(null)} onBook={handlePayment} />
       )}
     </div>
   );

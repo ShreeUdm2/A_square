@@ -1,5 +1,5 @@
 import { HealthPackages } from '../components/HealthPackages';
-import nicu from '../assets/imageGallery/nicu.png' 
+import nicu from '../assets/imageGallery/nicuuu.jpg' 
 
 const services = [
   {
