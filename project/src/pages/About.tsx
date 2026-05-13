@@ -17,10 +17,11 @@ import nurseDR from '../assets/imageGallery/nurseDR.png'
 import oldage from '../assets/imageGallery/oldage.jpg'
 import patientGreetings from '../assets/imageGallery/patientGreetings.jpg'
 import twinbaby from '../assets/imageGallery/twinbaby.jpg'
+import nightView from '../assets/imageGallery/night_hosp.jpg'
 
 
 const galleryImages = [
-  frontView, reception, mainEntry, room, newMOT, newVIPRoom, nicuu, sideView, area, healthcamp, nurseDR, oldage, patientGreetings, twinbaby
+  frontView, reception, mainEntry, room, newMOT, newVIPRoom, nicuu, sideView, area, healthcamp, nurseDR, oldage, patientGreetings, twinbaby, nightView
 ];
 
 
