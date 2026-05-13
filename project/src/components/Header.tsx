@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Clock, Menu, X } from 'lucide-react';
+import { Phone, Mail, Clock, Menu, X, Facebook, Instagram } from 'lucide-react';
 import logo from '../assets/logo_removedBG.png';
 
 export function Header() {
@@ -33,8 +33,26 @@ export function Header() {
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               <span className="text-xs sm:text-sm">24×7 Emergency Services</span>
+
+              {/* social icons wrapper */}
+              <div className="flex items-center gap-4 ml-4">
+                <a
+                  href="https://www.facebook.com/asquarehospital"
+                  className="hover:text-blue-100 transition"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/asquarehospital"
+                  className="hover:text-blue-100 transition"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 

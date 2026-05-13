@@ -47,6 +47,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/health-packages" className="text-gray-400 hover:text-[#00B894] transition">
+                  Health Packages
+                </a>
+              </li>
+              <li>
                 <a href="/services" className="text-gray-400 hover:text-[#00B894] transition">
                   Services
                 </a>
@@ -62,10 +67,10 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6">Departments</h4>
             <ul className="space-y-3">
-              <li className="text-gray-400">Cardiology</li>
+              <li className="text-gray-400">Obstetrics & Gynaecology</li>
               <li className="text-gray-400">Orthopedics</li>
-              <li className="text-gray-400">Neurology</li>
-              <li className="text-gray-400">Gynecology</li>
+              <li className="text-gray-400">Anesthesia</li>
+              <li className="text-gray-400">Surgery</li>
               <li className="text-gray-400">Pediatrics</li>
               <li className="text-gray-400">General Medicine</li>
             </ul>
@@ -102,8 +107,8 @@ export function Footer() {
             <p className="text-gray-400 text-sm text-center md:text-left">
               © 2026 A Square Multispeciality Hospital. All rights reserved.
             </p>
-            <p className="flex items-center gap-2 text-gray-400 text-sm">
-              Made by UDM Techno for better healthcare
+            <p className="flex items-center gap-2 text-gray-400 text-sm mr-8">
+              Made by <a href="https://udmtechno.com/" className="text-[#00B894] font-bold hover:text-[#0077B6] transition">UDM Techno</a> for better healthcare
             </p>
           </div>
         </div>

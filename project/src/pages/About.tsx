@@ -19,18 +19,6 @@ import patientGreetings from '../assets/imageGallery/patientGreetings.jpg'
 import twinbaby from '../assets/imageGallery/twinbaby.jpg'
 
 
-
-
-
-const coreValues = [
-  { icon: '🏥', title: 'Patient First', description: 'Every decision we make centers on the well-being, dignity, and safety of our patients.' },
-  { icon: '🔬', title: 'Clinical Excellence', description: 'We uphold the highest standards of medical practice through continuous learning and innovation.' },
-  { icon: '🤝', title: 'Compassionate Care', description: 'We treat every patient and family with empathy, respect, and genuine human warmth.' },
-  { icon: '🛡️', title: 'Integrity', description: 'Honesty and transparency guide every interaction, from diagnosis to billing.' },
-  { icon: '🌐', title: 'Accessibility', description: 'We strive to make quality healthcare available to all sections of the community.' },
-  { icon: '⚙️', title: 'Innovation', description: 'We invest in modern technology and protocols to deliver the best possible outcomes.' },
-];
-
 const galleryImages = [
   frontView, reception, mainEntry, room, newMOT, newVIPRoom, nicuu, sideView, area, healthcamp, nurseDR, oldage, patientGreetings, twinbaby
 ];
@@ -120,7 +108,7 @@ export function About() {
             </p>
           </div>
         </div>
-
+        
         {/* Our Journey */}
         <div className="mb-20">
           <div className="text-center mb-4">

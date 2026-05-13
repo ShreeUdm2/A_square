@@ -1,16 +1,6 @@
 import { useState } from 'react';
 import { X, Check, Users, Info, FlaskConical, ChevronRight } from 'lucide-react';
 
-const loadRazorpayScript = () => {
-  return new Promise((resolve) => {
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-    script.onload = () => resolve(true);
-    script.onerror = () => resolve(false);
-    document.body.appendChild(script);
-  });
-};
-
 type Test = {
   no: number;
   description: string;
@@ -671,57 +661,26 @@ export function HealthPackagesPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedPkg, setSelectedPkg] = useState<Package | null>(null);
 
-  const handlePayment = async (pkg: Package) => {
-    const res = await loadRazorpayScript();
-    
-    if (!res) {
-      alert('Razorpay SDK failed to load. Are you online?');
-      return;
+  const paymentLinks: Record<string, string> = {
+    'Basic Health Check Package': 'https://rzp.io/rzp/YlXMsrK',
+    'Executive Health Package': 'https://rzp.io/rzp/PLe5kNNw',
+    'Senior Citizen Package': 'https://rzp.io/rzp/7MQI8RI',
+    "Women's Wellness Package": 'https://rzp.io/rzp/Ytz8H0Z',
+    'Maternity Care Package': 'https://rzp.io/rzp/sLxipSw',
+    'Child Health Package': 'https://rzp.io/rzp/wHwY74vb',
+    'Diabetic Care Package': 'https://rzp.io/rzp/Wm2dcKlT',
+    'Heart Check Package': 'https://rzp.io/rzp/CPm3AujM',
+    'Full Body Comprehensive Package': 'https://rzp.io/rzp/4OteC35',
+    'Pre-Employment / Industrial Fitness Package': 'https://rzp.io/rzp/3YN48OG'
+  };
+
+  const handlePayment = (pkg: Package) => {
+    const link = paymentLinks[pkg.name];
+    if (link) {
+      window.location.href = link;
+    } else {
+      alert("Payment link not found for this package.");
     }
-
-    // Convert price string (e.g., "₹2,600") to number (2600)
-    const priceNumber = parseInt(pkg.price.replace(/[^\d]/g, ''), 10);
-
-    const options = {
-      key: 'rzp_test_pQLbxWbQ5iwwZe',
-      amount: priceNumber * 100, // amount in paisa
-      currency: "INR",
-      name: "A Square Hospital",
-      description: pkg.name,
-      handler: function (response: any) {
-        // Success callback
-        const paymentId = response.razorpay_payment_id;
-        alert(`Payment successful! Payment ID: ${paymentId}`);
-        
-        // Construct WhatsApp message
-        const hospitalPhone = "+917987797922"; // Hospital's WhatsApp number
-        const message = `Hello A Square Hospital,
-
-I have successfully booked a Health Package.c:\Users\FTT\Downloads\nurseDR.png
-
-*Package Details:*
-- Name: ${pkg.name}
-- Amount Paid: ${pkg.price}
-- Payment ID: ${paymentId}
-
-Please guide me on the next steps.`;
-
-        // Redirect to WhatsApp
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/${hospitalPhone}?text=${encodedMessage}`, '_blank');
-      },
-      prefill: {
-        name: "", // You can prompt user for this before payment
-        email: "",
-        contact: ""
-      },
-      theme: {
-        color: "#00B894"
-      }
-    };
-
-    const paymentObject = new (window as any).Razorpay(options);
-    paymentObject.open();
   };
 
   const filtered = activeCategory === 'All'

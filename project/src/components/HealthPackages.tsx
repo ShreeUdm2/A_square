@@ -4,54 +4,52 @@ import { Check } from 'lucide-react';
 
 const packages = [
   {
-    name: 'Basic Health Checkup',
-    price: '₹1,999',
-    description: 'Essential health screening for general wellness',
+    name: 'Basic Health Check Package',
+    price: '₹2,600',
+    description: 'Essential preventive screening for young adults and working individuals.',
     features: [
+      'General Physician Consultation',
       'Complete Blood Count (CBC)',
-      'Blood Sugar (Fasting)',
-      'Lipid Profile',
-      'Liver Function Test',
-      'Kidney Function Test',
-      'Thyroid Profile',
-      'Urine Routine',
-      'ECG',
+      'Thyroid Profile (TSH)',
+      'Blood Sugar (Fasting/Random)',
+      'Urine Routine Examination',
+      'X-Ray Chest',
+      'Ultrasound (USG) Whole Abdomen',
     ],
     popular: false,
+    paymentLink: 'https://rzp.io/rzp/YlXMsrK',
   },
   {
-    name: 'Comprehensive Package',
-    price: '₹4,999',
-    description: 'Complete health assessment with specialist consultation',
+    name: 'Executive Health Package',
+    price: '₹7,225',
+    description: 'Comprehensive screening for professionals to detect lifestyle & occupation-related diseases.',
     features: [
-      'All Basic Package Tests',
-      'Vitamin D & B12',
-      'HbA1c',
-      'Chest X-Ray',
-      'USG Abdomen',
-      'Echo Cardiography',
-      'Stress Test',
-      'Doctor Consultation',
-      'Dietitian Consultation',
+      'Complete Blood Count (CBC) & ESR',
+      'Lipid & Liver Profile (LFT)',
+      'Kidney Function Test (KFT)',
+      'Thyroid Profile',
+      'ECG & Pulmonary Function Test',
+      'Vitamin B12 & D',
+      'Ultrasound Whole Abdomen',
     ],
     popular: true,
+    paymentLink: 'https://rzp.io/rzp/PLe5kNNw',
   },
   {
     name: 'Senior Citizen Package',
-    price: '₹6,999',
-    description: 'Specialized health screening for elderly care',
+    price: '₹6,350',
+    description: 'Specialized preventive health screening for age-related diseases and hidden risks.',
     features: [
-      'All Comprehensive Tests',
-      'Bone Density Test',
-      'Prostate Specific Antigen',
-      'Mammography (Women)',
-      'Pulmonary Function Test',
-      '2D Echo',
-      'Ophthalmology Check',
+      'General Physician Consultation',
+      'Lipid, Liver & Kidney Profile',
+      'ECG & Pulmonary Function Test',
+      'Vitamin D & B12',
+      'Serum Calcium',
       'Cardiology Consultation',
-      'Free Home Collection',
+      'Ultrasound (USG) Whole Abdomen',
     ],
     popular: false,
+    paymentLink: 'https://rzp.io/rzp/7MQI8RI',
   },
 ];
 
@@ -133,7 +131,7 @@ export function HealthPackages() {
                 </ul>
 
                 <a
-                  href="#appointment"
+                  href={pkg.paymentLink}
                   className={`block w-full text-center py-3 rounded-lg font-semibold transition ${
                     pkg.popular
                       ? 'bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white hover:shadow-lg'

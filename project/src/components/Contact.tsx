@@ -75,9 +75,10 @@ export function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-1">Working Hours</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    <strong>OPD:</strong> Mon-Sat: 9:00 AM - 5:00 PM<br />
+                    <strong>OPD:</strong> 9:00 AM - 2:00 PM & 4:00 PM - 8:00 PM<br />
                     <strong>Emergency:</strong> 24/7 Available<br />
-                    <strong>Lab:</strong> Mon-Sun: 7:00 AM - 9:00 PM
+                    <strong>Lab:</strong> Mon-Sun: 7:00 AM - 9:00 PM <br />
+                    <strong>Pharmacy:</strong> 24/7 Available
                   </p>
                 </div>
               </div>
