@@ -57,10 +57,15 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/careers" className="text-gray-400 hover:text-[#00B894] transition">
+                  Careers
+                </a>
+              </li>
+              {/* <li>
                 <a href="#appointment" className="text-gray-400 hover:text-[#00B894] transition">
                   Book Appointment
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

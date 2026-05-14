@@ -60,7 +60,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center gap-2">
-              <img src={logo} alt="logo" className='w-28 sm:w-36 h-16 sm:h-20 ml-12' />
+              <img src={logo} alt="logo" className='w-28 sm:w-36 h-16 sm:h-20 ml-10' />
             </Link>
 
             <div className="hidden lg:flex text-sm items-center gap-5">
@@ -72,7 +72,8 @@ export function Header() {
               <Link to="/services" className="text-gray-700 hover:text-[#0077B6] font-medium transition">Services</Link>
               <Link to="/health-packages" className="text-gray-700 hover:text-[#0077B6] font-medium transition">Packages</Link>
               <Link to="/blog" className="text-gray-700 hover:text-[#0077B6] font-medium transition">Blog</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-[#0077B6] font-medium transition mr-28">Contact</Link>
+              <Link to="/careers" className="text-gray-700 hover:text-[#0077B6] font-medium transition">Careers</Link>
+              <Link to="/contact" className="text-gray-700 hover:text-[#0077B6] font-medium transition mr-16">Contact</Link>
               <a
                 href="/#appointment"
                 className="bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white px-4 py-2.5 rounded-lg hover:shadow-lg transition transform hover:scale-105 font-medium"
@@ -101,6 +102,7 @@ export function Header() {
               <Link to="/services" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg" onClick={() => setIsMenuOpen(false)}>Services</Link>
               <Link to="/health-packages" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg" onClick={() => setIsMenuOpen(false)}>Packages</Link>
               <Link to="/blog" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+              <Link to="/careers" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg" onClick={() => setIsMenuOpen(false)}>Careers</Link>
               <Link to="/contact" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg" onClick={() => setIsMenuOpen(false)}>Contact</Link>
               <a
                 href="/#appointment"

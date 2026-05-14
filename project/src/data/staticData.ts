@@ -386,28 +386,55 @@ export const doctorsData: DoctorExtended[] = [
 export const testimonialsData: Testimonial[] = [
   {
     id: 'test-1',
-    patient_name: 'Vivek Kumar',
+    patient_name: 'sujata naik',
     department: 'Cardiology',
     rating: 5,
-    comment: 'Excellent service from ASquare Hospital. The doctors are very professional and the staff is extremely helpful.',
+    comment: 'A Square hospital, first step treatment and good service. Dr babita mam and staff services is Betty good. And behaviour is very well .good facility, well, maintained room, and etc very well.',
     is_approved: true,
     created_at: new Date().toISOString()
   },
   {
     id: 'test-2',
-    patient_name: 'Ritesh Agrawal',
+    patient_name: 'Deelip kumar',
     department: 'Orthopedics',
     rating: 5,
-    comment: 'After my knee replacement surgery, I was back on my feet much faster than I expected. The physiotherapy team is amazing.',
+    comment: 'The behaviour of all staffs are excellent....The doctor babita rawani is very good. For delivery case it\'s best hospital with good cleaningness and hygiene. Normal delivery is preffered.',
     is_approved: true,
     created_at: new Date().toISOString()
   },
   {
     id: 'test-3',
-    patient_name: 'Priyanka Saha',
+    patient_name: 'Seema jaypuriya',
     department: 'Neurology',
     rating: 4,
-    comment: 'Very professional environment. The consultation was thorough and all my questions were answered patiently.',
+    comment: 'A square hospitals is the western odisha best gyanic hospital . Everything is good dr babita mam and all staffs very much suppotives.cleaningness also well and good .ICU,OT,NICU ,HDU facilities in this hospital.',
+    is_approved: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: 'test-4',
+    patient_name: 'Shreejita Shreejita',
+    department: 'Maternity Care',
+    rating: 5, 
+    comment: 'Dr babita ramani mam is the best gynaecologist doctor. hospital provided excellent treatment with good facilities. the staff was caring and professional,  making my experience very positive.',
+    is_approved: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: 'test-5',
+    patient_name: 'Rajesh Patel',
+    department: 'General Medicine',
+    rating: 5,
+    comment: 'A square hospital services is excellent 👌, Dr babita Ramani mam best gynaecologist doctor and all staffs are very excellent....thank you ❤️🥰.',
+    is_approved: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: 'test-6',
+    patient_name: 'Sunita Meher',
+    department: 'Gynecology & Obstetrics',
+    rating: 5,
+    comment: 'Excellent care and very knowledgeable doctors. The staff is polite and the whole process from admission to discharge was smooth.',
     is_approved: true,
     created_at: new Date().toISOString()
   }
