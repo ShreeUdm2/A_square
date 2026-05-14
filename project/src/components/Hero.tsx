@@ -5,8 +5,7 @@ import { ChevronLeft, ChevronRight, Calendar, Phone } from 'lucide-react';
 import hospital from '../assets/hospital.jpeg'
 import slider2 from '../assets/receptioncounter.png'
 import slider3 from '../assets/slider3.jpeg'
-import slider4 from '../assets/slider4.jpeg'
-
+import slider4 from '../assets/imageGallery/ot.png'
 
 
 const slides = [

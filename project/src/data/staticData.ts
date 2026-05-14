@@ -353,6 +353,33 @@ export const doctorsData: DoctorExtended[] = [
     bio: 'Neurologist providing expert care for brain, spine, and nerve disorders.',
     bio_full:
       'With expertise in neurological care, Dr. Abhishek Nanda provides comprehensive evaluation and management of brain, spine, and nerve-related disorders with a focus on accurate diagnosis and advanced treatment. His approach is based on evidence-based practice and patient-centred care. Specializes in stroke care, epilepsy management, migraine treatment, and neuro-critical care, helping patients achieve better neurological health and improved quality of life through precise diagnosis and effective treatment strategies.'
+  },
+  {
+    id: 'doc-9',
+    name: 'Dr. Rajkumar Pradhan',
+    slug: 'rajkumar-pradhan',
+    department_id: 'dept-anaesthesia',
+    qualification: 'MD (Anaesthesia)',
+    experience_years: 10,
+    specialization: [
+      'Anaesthesiology',
+      'Critical Care',
+      'ICU Management',
+      'Ventilator Support',
+      'Trauma & Emergency Care',
+      'Pain Management',
+      'Perioperative Care',
+    ],
+    consultation_fee: 700,
+    is_available: true,
+    display_order: 9,
+    created_at: new Date().toISOString(),
+    image_url:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnEWi8Y-A6fCNXLlJRD16VGPe5ws8MGvMDXA&s',
+    designation: 'Consultant Anaesthesiologist & Critical Care Specialist',
+    bio: 'Experienced anaesthesiologist and critical care specialist providing advanced perioperative and ICU care.',
+    bio_full:
+      'Dr. Rajkumar Pradhan is a skilled Consultant Anaesthesiologist and Critical Care Specialist with over 10 years of experience in anaesthesia, emergency medicine, and intensive care management. He specializes in ICU care, ventilator support, trauma stabilization, perioperative monitoring, and pain management for critically ill and surgical patients. His patient-focused approach combines advanced monitoring systems, evidence-based treatment protocols, and rapid response critical care practices to ensure maximum patient safety and successful treatment outcomes. Dr. Pradhan is dedicated to delivering comprehensive support for high-risk surgeries, emergency cases, and intensive care patients with precision, compassion, and clinical excellence.'
   }
 ];
 
