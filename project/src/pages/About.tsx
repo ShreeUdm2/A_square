@@ -37,16 +37,30 @@ export function About() {
         <div className="flex flex-col md:flex-row gap-8 sm:gap-12 items-center mb-12 sm:mb-24">
           <div className="w-full md:w-1/2">
             <span className="text-[#00B894] font-semibold text-sm uppercase tracking-wider">About Us</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4 text-gray-800">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mt-3 mb-4 text-gray-800">
               <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">A Square</span> Hospital
             </h1>
             <div className="w-20 h-1 bg-gradient-to-r from-[#0077B6] to-[#00B894] rounded mb-4" />
             <p className="text-sm text-gray-600 leading-relaxed ">
-              Welcome to A Square Hospital, Jharsuguda, a trusted destination for quality healthcare, compassionate treatment, and advanced medical services. We are committed to delivering patient-centered care with modern facilities, experienced doctors, and a dedicated healthcare team.
-              At A Square Hospital, we believe that every patient deserves personalized attention, timely treatment, and complete support throughout their healthcare journey. Our hospital is equipped with modern medical technology and infrastructure to provide safe, efficient, and reliable care for patients of all ages.
-              We specialize in a wide range of healthcare services, including Gynecology & Obstetrics, Maternity Care, General Medicine, General Surgery, Orthopedics, Paediatrics, Advanced NICU, Fertility Care, Diagnostics, Emergency Care, and Preventive Health Services. Our focus is to ensure the highest standards of treatment while maintaining warmth, trust, and comfort for every patient.
-              Led by experienced medical professionals, A Square Hospital has earned the confidence of families in Jharsuguda and nearby areas through ethical practice, affordable healthcare, and excellent patient outcomes
-              .
+              Welcome to A Square Hospital, a trusted destination for affordable, compassionate and
+              quality healthcare. We are committed to providing patient-centered medical care in a
+              warm, safe and homely environment where every patient is treated with dignity,
+              empathy and personal attention.
+              At A Square Hospital, we understand that healthcare is not only about treatment but
+              also about comfort, trust and emotional support. Our experienced doctors, caring
+              nursing staff, and dedicated healthcare professionals work together to ensure timely
+              treatment, personalized care and complete support throughout every patient’s healing
+              journey.
+              Equipped with modern medical technology and advanced infrastructure, we provide
+              safe, reliable and efficient healthcare services for patients of all age groups. Our
+              specialties include Gynecology &amp; Obstetrics, Maternity Care, General Medicine,
+              General Surgery, Orthopedics, Paediatrics, Advanced NICU, Fertility Care, Diagnostics,
+              Emergency Care and Preventive Health Services.
+              With a strong commitment to ethical medical practices, affordability, clinical excellence
+              and compassionate care, A Square Hospital has earned the trust and confidence of
+              families across Jharsuguda and nearby regions by delivering healthcare that combines
+              advanced treatment with a human touch.
+              
             </p>
           </div>
           <div className="w-full md:w-1/2 overflow-hidden rounded-2xl shadow-xl">
@@ -71,22 +85,37 @@ export function About() {
           </div>
           <div className="flex-1 min-w-0">
             <span className="text-[#00B894] font-semibold text-sm uppercase tracking-wider">Meet Our Founder & Director</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-3 mb-4 text-gray-800">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mt-3 mb-4 text-gray-800">
               Dr. <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Babita Ramani</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#0077B6] to-[#00B894] rounded mb-5" />
             <div className="flex flex-col gap-4">
               <p className="text-sm text-gray-600 leading-relaxed">
-                <strong>Dr. Babita Ramani</strong> is the proud Founder & Director of A Square Hospital, Jharsuguda, and a renowned name in women’s healthcare. She is a highly experienced Senior Obstetrician & Gynecologist with more than 15 years of dedicated service in the medical field.
+                <strong>Dr. Babita Ramani</strong> is the visionary Founder &amp; Director of A Square Hospital and a highly
+                respected name in women’s healthcare. With more than 15 years of dedicated medical
+                experience, she has earned the trust, respect and confidence of countless families
+                through her compassionate care, clinical excellence and unwavering commitment to
+                patient well-being.
               </p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                She holds an MD in Obstetrics & Gynecology (O&G), FICOG, and has completed an IVF Fellowship from KIEL, Germany. She also served as Ex-Senior Resident at VIMSAR, Burla, gaining valuable clinical expertise in advanced patient care. Dr. Babita Ramani is a skilled Laparoscopic Surgeon, Ultrasonologist, and Fertility Expert, known for offering modern, compassionate, and personalized treatment to women at every stage of life.
+                She holds an MD in Obstetrics &amp; Gynecology (O&amp;G), FICOG and has completed an IVF
+                Fellowship from KIEL, Germany. She also served as Ex-Senior Resident at VIMSAR,
+                Burla, where she gained extensive expertise in advanced obstetric, gynecological and
+                emergency patient care.
               </p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Beyond her medical profession, Dr. Babita Ramani is also a well-known social worker, actively involved in community welfare, women’s health awareness, and social development initiatives.
+                Dr. Babita Ramani is a highly skilled Obstetrician &amp; Gynecologist, Laparoscopic
+                Surgeon, Ultrasonologist and Fertility Specialist, known for her ethical medical practice,
+                evidence-based treatment and patient-centered approach. She is deeply committed to
+                women’s health, safe motherhood, fertility care and preventive healthcare, ensuring
+                every patient receives personalized attention with empathy, dignity and emotional
+                support.
               </p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Under her visionary leadership, A Square Hospital continues to provide trusted, affordable, and advanced healthcare services with the mission of improving lives and ensuring better health for every family.
+                Her gentle approach, professional dedication and ability to connect with patients on a
+                personal level have made her one of the most trusted healthcare professionals in the
+                region. She strongly believes that healthcare should not only heal illnesses but also
+                provide comfort, confidence and hope to patients and their families.
               </p>
             </div>
           </div>
@@ -100,7 +129,9 @@ export function About() {
             <h2 className="text-2xl font-bold text-gray-800">Our Mission</h2>
             <div className="w-10 h-1 bg-[#0077B6] rounded" />
             <p className="text-gray-600 leading-relaxed">
-              To provide accessible, high-quality healthcare that improves the lives of our patients and the community we serve. We are committed to delivering compassionate, evidence-based medical care with the latest technology, ensuring every patient receives safe, timely, and effective treatment regardless of their background or circumstance.
+              To provide compassionate, accessible and high-quality healthcare with empathy,
+              advanced technology and expert medical care, ensuring every patient is treated with
+              dignity, trust and personalized attention while building a healthier community.
             </p>
           </div>
           <div className="bg-green-50 rounded-2xl p-6 sm:p-10 flex flex-col gap-4">
@@ -108,11 +139,13 @@ export function About() {
             <h2 className="text-2xl font-bold text-gray-800">Our Vision</h2>
             <div className="w-10 h-1 bg-[#00B894] rounded" />
             <p className="text-gray-600 leading-relaxed">
-              To be the most trusted and preferred healthcare provider in the region, recognized for clinical excellence, innovation, and compassionate care. We envision a future where every individual in Jharsuguda and surrounding areas has access to world-class medical services delivered with dignity, integrity, and a genuine commitment to their well-being.
+              To be the most trusted healthcare provider in the region, recognized for clinical
+              excellence, innovation and compassionate patient care, while ensuring accessible,
+              dignified and best healthcare for every individual in our community.
             </p>
           </div>
         </div>
-        
+
         {/* Our Journey */}
         <div className="mb-20">
           <div className="text-center mb-4">
@@ -120,11 +153,26 @@ export function About() {
               Our <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Journey</span>
             </h2>
           </div>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#0077B6] to-[#00B894] rounded mb-12 mx-auto" />
+          <div className="w-20 h-1 bg-gradient-to-r from-[#0077B6] to-[#00B894] rounded mb-8 mx-auto" />
           <div className="bg-blue-50 rounded-2xl p-6 sm:p-10 mb-12 flex flex-col gap-4">
-            <p className="text-gray-600 leading-relaxed">A Square Hospital, Jharsuguda was established in March 2025 with a vision to provide trusted, affordable, and advanced healthcare services to the people of Jharsuguda and nearby communities. Since its beginning, our mission has been to deliver compassionate treatment, modern medical care, and patient-focused services under one roof.</p>
-            <p className="text-gray-600 leading-relaxed">From the day it opened, A Square Hospital has continuously worked toward improving healthcare standards by bringing experienced doctors, advanced medical technology, and quality treatment facilities closer to the community. The hospital is committed to earning the trust of families through ethical practice, successful patient care, and dedication to excellence.</p>
-            <p className="text-gray-600 leading-relaxed">Today, A Square Hospital is growing as a center of healthcare excellence, serving every patient with care, dignity, and professionalism while continuing the journey toward a healthier tomorrow.</p>
+            <p className="text-gray-600 leading-relaxed">A Square Hospital was established in March 2025 with a vision to provide trusted,
+              affordable and advanced healthcare services to the people of Jharsuguda and nearby
+              communities. From the very beginning, our focus has been to deliver compassionate,
+              patient-centered care supported by experienced doctors, a dedicated medical team and
+              advanced medical technology.</p>
+            <p className="text-gray-600 leading-relaxed">Driven by a commitment to clinical excellence and ethical healthcare practices, A
+              Square Hospital has continuously worked to make quality medical services more
+              accessible, reliable and community-focused. Equipped with modern infrastructure and
+              advanced diagnostic and treatment facilities the hospital strives to provide safe,
+              effective and timely healthcare for every patient.</p>
+            <p className="text-gray-600 leading-relaxed">Our team of skilled doctors, nurses and healthcare professionals works with dedication,
+              empathy and professionalism to ensure that every patient receives personalized
+              attention, comfort and the highest standard of care. Through trusted treatment,
+              compassionate service and positive patient outcomes, A Square Hospital has steadily
+              earned the confidence and trust of families across the region.</p>
+            <p className="text-gray-600 leading-relaxed">Today, A Square Hospital is growing as a trusted center of healthcare excellence,
+              committed to improving lives and building a healthier future for the community through
+              advanced medical care, humanity and unwavering dedication to patient well-being.</p>
           </div>
 
         </div>

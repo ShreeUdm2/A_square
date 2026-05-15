@@ -1,15 +1,22 @@
 import { HealthPackages } from '../components/HealthPackages';
 import nicu from '../assets/imageGallery/nicuuu.jpg' 
+import gyno from '../assets/service/gyno.png'
+import maternity from '../assets/service/maternity.png'
+import surgery from '../assets/service/surgery.png'
+import ortho from '../assets/service/ortho.png'
+import ifv from '../assets/service/ivf.png'
+import paediatric from '../assets/service/paediatric.png'
+import diagnostics from '../assets/service/diagnosis.png'
 
 const services = [
   {
     name: 'Gynecology & Obstetrics Services',
-    image: 'https://jaiclinichospital.com/wp-content/uploads/2024/07/Gynecology-and-Obstetrics.png',
+    image: gyno,
     content: "Comprehensive women's health care including pregnancy consultations, normal and painless delivery, cesarean section, high-risk pregnancy management, and infertility treatment. Our experienced gynecologists provide compassionate support at every stage of a woman's health journey.",
   },
   {
     name: 'Maternity Packages',
-    image: 'https://images.pexels.com/photos/3259629/pexels-photo-3259629.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: maternity,
     content: 'Affordable all-inclusive maternity care packages covering antenatal check-ups, safe delivery, and postnatal support. Designed to ensure comfort and safety for both mother and baby, our packages offer quality care without financial stress.',
   },
   {
@@ -19,17 +26,17 @@ const services = [
   },
   {
     name: 'General Surgery',
-    image: 'https://generalhospitalernakulam.in/wp-content/uploads/2023/09/General-Surgery_2.png',
+    image: surgery,
     content: 'Minor and major surgical procedures performed in modern, fully equipped operation theatres with strict safety protocols. Our surgical team handles elective and emergency cases with precision and thorough post-operative care.',
   },
   {
     name: 'Orthopedic Care',
-    image: 'https://vishwarajhospital.com/wp-content/uploads/2023/08/Ortho-1024x576.jpg',
+    image: ortho,
     content: 'Specialized treatment for bone fractures, joint pain, arthritis, trauma, and spine-related conditions. Using modern implants and minimally invasive techniques, our orthopedic team restores mobility and improves quality of life.',
   },
   {
     name: 'Paediatric Care',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv_tRSG1XLBCMFMrUkOb9kojsdXDnD_1CtQQ&s',
+    image: paediatric,
     content: 'Complete healthcare for newborns, infants, children, and adolescents including vaccinations, growth monitoring, and treatment for common childhood illnesses. Our pediatric team provides gentle, family-centered care for every young patient.',
   },
   {
@@ -39,12 +46,12 @@ const services = [
   },
   {
     name: 'Fertility & IVF Consultation',
-    image: 'https://static.businessworld.in/what-is-ivf_20240726194110_ogImage_41.jpg',
+    image: ifv,
     content: 'Expert fertility consultations and advanced reproductive treatment options for couples facing infertility challenges. Our specialists provide compassionate, evidence-based guidance to help families achieve their dream of parenthood.',
   },
   {
     name: 'Diagnostics & Imaging',
-    image: 'https://media.fortuneindia.com/fortune-india/import/2021-11/97a02df0-297e-4a5a-b5c8-4669a54c992b/medical_equipent.jpg?rect=0,0,4547,2558&w=640&auto=format,compress&q=80',
+    image: diagnostics,
     content: 'Comprehensive diagnostic services including ultrasound imaging, pathology testing, and routine health investigations. Accurate and timely results support our doctors in making precise diagnoses and effective treatment decisions.',
   },
   {
@@ -88,7 +95,7 @@ export function ServicesPage() {
                 <img
                   src={service.image}
                   alt={service.name}
-                  className="w-full h-48 sm:h-[370px] object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 sm:h-[370px] object-fit hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="w-full md:w-1/2">
