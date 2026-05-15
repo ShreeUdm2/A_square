@@ -60,7 +60,7 @@ export function About() {
               and compassionate care, A Square Hospital has earned the trust and confidence of
               families across Jharsuguda and nearby regions by delivering healthcare that combines
               advanced treatment with a human touch.
-              
+
             </p>
           </div>
           <div className="w-full md:w-1/2 overflow-hidden rounded-2xl shadow-xl">
@@ -173,6 +173,34 @@ export function About() {
             <p className="text-gray-600 leading-relaxed">Today, A Square Hospital is growing as a trusted center of healthcare excellence,
               committed to improving lives and building a healthier future for the community through
               advanced medical care, humanity and unwavering dedication to patient well-being.</p>
+          </div>
+
+        </div>
+
+
+
+        <div className="mb-20">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mt-3 text-gray-800">
+              <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">Advanced Care</span>
+            </h2>
+          </div>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#0077B6] to-[#00B894] rounded mb-8 mx-auto" />
+          <div className="bg-blue-50 rounded-2xl p-6 sm:p-10 mb-12 flex flex-col gap-4">
+            <p className="text-gray-600 leading-relaxed">At A Square Hospital, we are committed to delivering advanced, affordable and
+              compassionate healthcare with the highest standards of professionalism and patient
+              care. Supported by experienced doctors, a dedicated nursing team, modern
+              infrastructure and advanced medical technology, we provide trusted healthcare
+              solutions for individuals and families under one roof.</p>
+            <p className="text-gray-600 leading-relaxed">Our focus is on accurate diagnosis, effective treatment, patient safety and personalized
+              medical attention to ensure every patient receives timely, reliable and comprehensive
+              care. We combine clinical expertise with modern medical advancements to deliver
+              better treatment outcomes while maintaining warmth, empathy and dignity in every
+              patient interaction.</p>
+            <p className="text-gray-600 leading-relaxed">Since our establishment, we have remained dedicated to serving the community
+              through ethical healthcare practices, compassionate service and a patient-first
+              approach, earning the trust and confidence of families across the region.</p>
+
           </div>
 
         </div>
