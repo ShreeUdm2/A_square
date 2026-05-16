@@ -6,6 +6,8 @@ import hospital from '../assets/hospital.jpeg'
 import slider2 from '../assets/receptioncounter.png'
 import slider3 from '../assets/slider3.jpeg'
 import slider4 from '../assets/imageGallery/ot.png'
+import slider5 from '../assets/imageGallery/room.png'
+import slider6 from '../assets/imageGallery/fire.png'
 
 
 const slides = [
@@ -30,17 +32,28 @@ const slides = [
     title: 'Advanced Surgical Care',
     subtitle: 'Equipped for Excellence in Every Procedure',
   },
+  {
+    image: slider5,
+    title: 'Comfort for every patient',
+    subtitle: 'Delivering quality healthcare that puts your well-being first',
+  },
+  {
+    image: slider6,
+    // nurse and doctors related title
+    title: 'Always Ready for You',
+    subtitle: 'With experienced doctor and caring nurses by your side',
+  },
 ];
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
+  //   }, 6000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -62,7 +75,7 @@ export function Hero() {
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover bg-gray-900"
+            className="w-full h-full object-fit bg-gray-900"
           />
           <div className="absolute inset-0 z-20 flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
