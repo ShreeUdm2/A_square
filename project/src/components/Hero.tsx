@@ -40,8 +40,8 @@ const slides = [
   {
     image: slider6,
     // nurse and doctors related title
-    title: 'Always Ready for You',
-    subtitle: 'With experienced doctor and caring nurses by your side',
+    title: 'Prepared for Every Emergency',
+    subtitle: 'Committed to safety, preparedness, and compassionate healthcare',
   },
 ];
 
