@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { X, Check, Users, Info, FlaskConical, ChevronRight } from 'lucide-react';
 
 type Test = {
@@ -688,6 +689,33 @@ export function HealthPackagesPage() {
     : packages.filter(p => p.category === activeCategory);
 
   return (
+    <>
+    <Helmet>
+      <title>Affordable Health Checkup Packages in Jharsuguda | A Square Hospital — 25% Off</title>
+      <meta name="description" content="Affordable health check packages in Jharsuguda at 25% discount — Basic, Executive, Senior Citizen, Women's Wellness, Maternity, Diabetic, Heart Check & Full Body packages. Book at A Square Hospital." />
+      <meta name="keywords" content="health packages Jharsuguda, health checkup Jharsuguda, affordable health package Jharsuguda, full body checkup Jharsuguda, women health package Jharsuguda, diabetic care package Jharsuguda, maternity package Jharsuguda" />
+      <link rel="canonical" href="https://asquarehospital.com/health-packages" />
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Health Checkup Packages at A Square Hospital Jharsuguda",
+          "description": "Affordable preventive health checkup packages with 25% discount at A Square Hospital, Jharsuguda",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Basic Health Check Package — ₹2,600"},
+            {"@type": "ListItem", "position": 2, "name": "Executive Health Package — ₹7,225"},
+            {"@type": "ListItem", "position": 3, "name": "Senior Citizen Package — ₹6,350"},
+            {"@type": "ListItem", "position": 4, "name": "Women's Wellness Package — ₹6,380"},
+            {"@type": "ListItem", "position": 5, "name": "Maternity Care Package — ₹1,935"},
+            {"@type": "ListItem", "position": 6, "name": "Child Health Package — ₹4,390"},
+            {"@type": "ListItem", "position": 7, "name": "Diabetic Care Package — ₹2,290"},
+            {"@type": "ListItem", "position": 8, "name": "Heart Check Package — ₹2,400"},
+            {"@type": "ListItem", "position": 9, "name": "Full Body Comprehensive Package — ₹4,090"},
+            {"@type": "ListItem", "position": 10, "name": "Pre-Employment / Industrial Fitness Package — ₹1,050"}
+          ]
+        }
+      `}</script>
+    </Helmet>
     <div className="pt-36 pb-20 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -749,5 +777,6 @@ export function HealthPackagesPage() {
         <PackageModal pkg={selectedPkg} onClose={() => setSelectedPkg(null)} onBook={handlePayment} />
       )}
     </div>
+    </>
   );
 }

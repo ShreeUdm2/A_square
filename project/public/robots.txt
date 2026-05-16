@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block admin and system paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /src/
+Disallow: /node_modules/
+
+# Sitemap reference
+Sitemap: https://asquarehospital.com/sitemap.xml

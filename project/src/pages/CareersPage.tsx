@@ -1,4 +1,5 @@
 import { useState, FormEvent } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Briefcase, Send, Users, HeartPulse, Stethoscope, FileText } from 'lucide-react';
 
 export function CareersPage() {
@@ -38,6 +39,13 @@ Please review my application. Thank you!`;
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Careers at A Square Hospital Jharsuguda | Join Our Healthcare Team</title>
+      <meta name="description" content="Explore career opportunities at A Square Hospital Jharsuguda. We are hiring doctors, nurses, medical staff & support professionals. Apply to join our compassionate healthcare team today." />
+      <meta name="keywords" content="hospital jobs Jharsuguda, nursing jobs Jharsuguda, doctor jobs Jharsuguda, careers A Square Hospital, healthcare jobs Jharsuguda, medical staff Jharsuguda" />
+      <link rel="canonical" href="https://asquarehospital.com/careers" />
+    </Helmet>
     <div className="pt-36 pb-20 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -232,5 +240,6 @@ Please review my application. Thank you!`;
 
       </div>
     </div>
+    </>
   );
 }
