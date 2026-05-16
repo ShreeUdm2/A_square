@@ -51,8 +51,8 @@ export function Statistics() {
 
             return (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-sm rounded-full mb-3 sm:mb-4">
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
 
                 {/* Counter */}
@@ -107,7 +107,7 @@ function Counter({ target, suffix = "", start }: CounterProps) {
   }, [start, target]);
 
   return (
-    <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+    <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
       {count.toLocaleString()}
       {suffix}
     </div>

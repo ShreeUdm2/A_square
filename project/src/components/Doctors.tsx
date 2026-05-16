@@ -64,7 +64,7 @@ export function Doctors({ limit, showViewAll }: DoctorsProps) {
               key={doctor.id}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              <div className="relative h-80 bg-gradient-to-br from-[#0077B6] to-[#00B894] overflow-hidden">
+              <div className="relative h-56 sm:h-80 bg-gradient-to-br from-[#0077B6] to-[#00B894] overflow-hidden">
                 <img
                   src={doctor.image_url}
                   alt={doctor.name}
@@ -298,10 +298,10 @@ export function Doctors({ limit, showViewAll }: DoctorsProps) {
         </div>
       )}
       {/* OUR TEAM SECTION */}
-      <div className="mt-16 bg-white border border-gray-100 rounded-2xl overflow-hidden grid md:grid-cols-2 min-h-[340px] shadow-sm">
+      <div className="mt-16 bg-white border border-gray-100 rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 min-h-[340px] shadow-sm">
 
         {/* LEFT: Image with right-edge fade */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden h-48 sm:h-auto">
           <img
             src={ourTeam}
             alt="Our Team"
@@ -312,7 +312,7 @@ export function Doctors({ limit, showViewAll }: DoctorsProps) {
         </div>
 
         {/* RIGHT: Content */}
-        <div className="flex flex-col justify-center gap-4 px-8 py-10">
+        <div className="flex flex-col justify-center gap-4 px-5 py-6 sm:px-8 sm:py-10">
 
           {/* Tag pill */}
           <div className="flex items-center gap-2 w-fit bg-[#E1F5EE] rounded-full px-3 py-1">

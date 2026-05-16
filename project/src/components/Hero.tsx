@@ -64,7 +64,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative pt-20 h-[480px] sm:h-[600px] lg:h-[750px] overflow-hidden">
+    <section id="home" className="relative pt-20 h-[360px] sm:h-[600px] lg:h-[750px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -80,28 +80,28 @@ export function Hero() {
           <div className="absolute inset-0 z-20 flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="max-w-2xl sm:ml-8">
-                <p className="text-sm sm:text-xl text-white/90 mb-1 sm:mb-2">
+                <p className="text-xs sm:text-xl text-white/90 mb-1 sm:mb-2">
                   {slide.subtitle1}
                 </p>
-                <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-4 leading-tight">
+                <h1 className="text-xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-4 leading-tight">
                   {slide.title}
                 </h1>
-                <p className="text-sm sm:text-2xl text-white/90 mb-4 sm:mb-8">
+                <p className="text-xs sm:text-2xl text-white/90 mb-3 sm:mb-8 line-clamp-2 sm:line-clamp-none">
                   {slide.subtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                <div className="flex flex-row sm:flex-row gap-2 sm:gap-4">
                   <a
                     href="#appointment"
-                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg hover:shadow-2xl transition transform hover:scale-105 font-semibold text-sm sm:text-base"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-gradient-to-r from-[#0077B6] to-[#00B894] text-white px-3 py-2.5 sm:px-8 sm:py-4 rounded-lg hover:shadow-2xl transition transform hover:scale-105 font-semibold text-xs sm:text-base"
                   >
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <Calendar className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                     Book Appointment
                   </a>
                   <a
                     href="tel:+917312345678"
-                    className="inline-flex items-center justify-center gap-2 bg-white text-[#0077B6] px-5 py-3 sm:px-8 sm:py-4 rounded-lg hover:shadow-2xl transition transform hover:scale-105 font-semibold text-sm sm:text-base"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-white text-[#0077B6] px-3 py-2.5 sm:px-8 sm:py-4 rounded-lg hover:shadow-2xl transition transform hover:scale-105 font-semibold text-xs sm:text-base"
                   >
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <Phone className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                     Emergency Call
                   </a>
                 </div>
@@ -113,14 +113,14 @@ export function Hero() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition"
       >
         <ChevronRight className="w-6 h-6" />
       </button>

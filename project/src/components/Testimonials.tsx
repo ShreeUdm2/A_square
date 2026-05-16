@@ -23,7 +23,7 @@ export function Testimonials() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative"
+              className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-5 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative"
             >
               <div className="absolute top-6 right-6 opacity-10">
                 <Quote className="w-16 h-16 text-[#0077B6]" />

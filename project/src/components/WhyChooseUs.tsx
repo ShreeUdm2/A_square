@@ -58,10 +58,10 @@ export function WhyChooseUs() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-white rounded-2xl p-5 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#0077B6] to-[#00B894] rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#0077B6] to-[#00B894] rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
                   {reason.title}

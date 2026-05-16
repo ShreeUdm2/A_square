@@ -89,11 +89,11 @@ export function Departments() {
                     className="w-full h-[80%] object-contain group-hover:scale-110 group-hover:-rotate-3 group-hover:-translate-y-1 transition-all duration-500 drop-shadow-sm group-hover:drop-shadow-lg relative z-10"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg  font-bold text-gray-800 mb-2 text-center group-hover:text-[#0077B6] transition-colors duration-300">
+                <div className="p-3 sm:p-6">
+                  <h3 className="text-sm sm:text-lg font-bold text-gray-800 mb-2 text-center group-hover:text-[#0077B6] transition-colors duration-300">
                    <span className="bg-gradient-to-r from-[#0077B6] to-[#00B894] bg-clip-text text-transparent">{dept.name}</span>  
                   </h3>
-                  <p className="text-sm text-gray-600 text-center leading-relaxed ">
+                  <p className="text-xs sm:text-sm text-gray-600 text-center leading-relaxed hidden sm:block">
                     {dept.description}
                   </p>
                 </div>
