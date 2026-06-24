@@ -34,7 +34,7 @@ const quickLinks = [
     icon: Heart,
     title: 'Emergency',
     description: '24/7 Available',
-    href: 'tel:+917312345678',
+    href: 'tel:+919827973991',
     color: 'from-red-500 to-red-600',
   },
 ];

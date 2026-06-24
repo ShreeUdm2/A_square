@@ -85,10 +85,10 @@ export function Services() {
             Our emergency department is open 24 hours a day, 7 days a week
           </p>
           <a
-            href="tel:+917312345678"
+            href="tel:+919827973991"
             className="inline-block bg-white text-[#0077B6] px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:shadow-2xl transition transform hover:scale-105"
           >
-            Call Emergency: +91 731-2345-678
+            Call Emergency: +91 9827973991
           </a>
         </div>
       </div>

@@ -10,6 +10,7 @@ import { DepartmentsPage } from './pages/DepartmentsPage';
 import { DoctorsPage } from './pages/DoctorsPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { Blog } from './pages/Blog';
+import { BlogPost } from './pages/BlogPost';
 import { ContactPage } from './pages/ContactPage';
 import { HealthPackagesPage } from './pages/HealthPackagesPage';
 import { CareersPage } from './pages/CareersPage';
@@ -37,6 +38,7 @@ function App() {
             <Route path="/doctors" element={<DoctorsPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/health-packages" element={<HealthPackagesPage />} />
             <Route path="/careers" element={<CareersPage />} />

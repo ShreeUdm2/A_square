@@ -4,7 +4,7 @@ import { MessageCircle, X } from "lucide-react";
 export const WhatsAppButton: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
-  const phoneNumber: string = "917312345678";
+  const phoneNumber: string = "919827973991";
 
   const services: string[] = [
     "Obstetrics & Gynaecology",

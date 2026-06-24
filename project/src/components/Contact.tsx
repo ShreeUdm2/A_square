@@ -44,8 +44,8 @@ export function Contact() {
                   <h3 className="text-lg font-semibold text-gray-800 mb-1">Phone Numbers</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {/* Appointments: <a href="tel:+917312345679" className="text-[#0077B6] font-medium hover:underline">+91 731-2345-679</a><br /> */}
-                    General Inquiry: <a href="tel:+917312345680" className="text-[#0077B6] font-medium hover:underline">+91 9827973991</a><br />
-                    Pathology no.: <a href="tel:+917312345678" className="text-[#0077B6] font-medium hover:underline">+91 8763009484</a>
+                    General Inquiry: <a href="tel:+919827973991" className="text-[#0077B6] font-medium hover:underline">+91 9827973991</a><br />
+                    Pathology no.: <a href="tel:+918763009484" className="text-[#0077B6] font-medium hover:underline">+91 8763009484</a>
                   </p>
                 </div>
               </div>
