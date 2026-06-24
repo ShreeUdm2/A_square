@@ -48,12 +48,12 @@ const slides = [
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  //   }, 6000);
-  //   return () => clearInterval(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -64,7 +64,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative pt-20 h-[360px] sm:h-[600px] lg:h-[750px] overflow-hidden">
+    <section id="home" className="relative pt-20 h-[460px] sm:h-[600px] lg:h-[750px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
